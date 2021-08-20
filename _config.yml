@@ -11,8 +11,6 @@ collections:
   uploads:
     title: Uploads
     output: true
-source: source
-destination: public
 include:
 - _redirects
 exclude:
