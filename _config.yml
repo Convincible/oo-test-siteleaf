@@ -8,6 +8,7 @@ collections:
   resources:
     title: Resources
     output: true
+    permalink: ":path"
   uploads:
     title: Uploads
     output: true
