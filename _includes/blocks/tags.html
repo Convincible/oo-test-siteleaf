@@ -1,6 +1,0 @@
-{% if include.tags != empty %}
-  <h2>Tags</h2>
-  {% for tag in include.tags %}
-    <a href="/tag/{{ tag | slugify }}" class="label label--tag text-capitalize">{{ tag }}</a>
-  {% endfor %}
-{% endif %}
