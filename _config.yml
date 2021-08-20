@@ -11,7 +11,7 @@ collections:
   uploads:
     title: Uploads
     output: true
-collections_dir: content
+#collections_dir: content
 source: source
 destination: public
 include:
