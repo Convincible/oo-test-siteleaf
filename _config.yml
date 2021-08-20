@@ -1,5 +1,5 @@
 ---
-title: Open Ownership
+title: Open Ownership Testing
 timezone: UTC
 collections:
   posts:
@@ -24,7 +24,6 @@ url: https://www.openownership.org
 description: Open Ownership strengthens accountability and advances transparency in
   company ownership
 permalink: pretty
-plugins: []
 markdown: kramdown
 kramdown:
   auto_ids: true
