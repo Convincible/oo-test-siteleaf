@@ -8,6 +8,9 @@ collections:
   resources:
     title: Resources
     output: true
+  uploads:
+    title: Uploads
+    output: true
 include:
 - _redirects
 exclude:
