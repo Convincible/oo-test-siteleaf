@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<section class="principles__page">
+	<!-- Page Title -->
+	{% include blocks/title.html  %}
+	<!-- End Page Title -->
+
+	<!-- Page Content -->
+	{% unless page.content == '' %}
+		<section class="grid-container">
+			<div class="grid-x grid-padding-x grid-padding-y align-center">
+				<div class="large-3 cell">
+					{% include blocks/principles-index.html  %}
+				</div>
+				<div class="large-9 cell">
+					{{ content }}
+
+					<p class="medium-gray">Last updated: {{ page.date | date: "%B %Y" }}</p>
+				</div>
+
+		 </div>
+		</section>
+ 	{% endunless %}
+	<!-- End Page Content -->
+</section>

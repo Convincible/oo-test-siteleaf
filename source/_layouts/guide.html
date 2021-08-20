@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+<section class="guide__page">
+
+  <!-- Pagination Desktop -->
+  <div class="grid-x grid-padding-y align-justify padding-top-2" data-equalizer>
+
+  <!-- Page Title -->
+  <div class="small-12 medium-8 cell padding-3 medium-offset-2">
+    <h1>{{page.title}}</h1>
+  </div>
+  <!-- End Page Title -->
+  
+  {% assign item = site.guide[0] %}
+  <div class="small-6 medium-2 cell text-right show-for-large">
+    <a href="/guide/{{ item.slug }}" class="guide-pagination--{{ item.slug }} button white guide-pagination-next expanded align-middle" data-equalizer-watch>
+      <div class="grid-y height-100 align-center">
+      <div class="shrink cell">
+        <div class="grid-x align-middle">
+          <div class="auto cell text-left">
+            <div>01</div>
+            <h3 class="margin-bottom-0">{{ item.title }}</h3>
+          </div>
+          <div class="shrink cell">
+            <svg class="icon icon-arrow icon-arrow-right"><use xlink:href="/assets/icons/symbol-defs.svg#icon-arrow-right"></use></svg>
+          </div>
+        </div>
+      </div>
+      </div>
+    </a>
+  </div>
+  
+  </div>
+<!-- End Pagination -->
+
+<!-- Image -->
+<section class="grid-container show-for-large">
+  <div class="grid-x grid-padding-x grid-padding-y align-center">
+    <div class="small-12 medium-10 cell text-center">
+      <!-- Guide -->  
+      {% include site/guide.html %}
+      <!-- End Guide -->
+    </div>
+  </div>
+</section>
+<!-- End Image -->
+
+<!-- Pagination -->
+<div class="hide-for-large">
+{% include pagination/guide.html %}
+</div>
+<!-- End Pagination -->
+
+<!-- Page Content -->
+<section class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y align-center">
+    <div class="small-12 medium-8 cell">
+    <div class="lead">
+      {{page.description | markdownify}}
+    </div>
+    </div>
+  </div>
+</section>
+<section class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y align-center">
+    <div class="small-12 medium-8 cell guide-home-content">
+      {{page.content | markdownify}}
+    </div>
+  </div>
+</section>
+<!-- End Page Content -->
+
+<!-- Pagination -->  
+{% include pagination/guide.html %}
+<!-- End Pagination -->
+
+</section>

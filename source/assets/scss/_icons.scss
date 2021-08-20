@@ -1,0 +1,104 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-twitter {
+  width: 0.9285714285714285em;
+}
+
+.icon-github {
+  width: 0.8571428571428571em;
+}
+
+.icon-linkedin {
+  width: 0.8571428571428571em;
+}
+
+.icon-instagram {
+  width: 0.8571428571428571em;
+}
+
+.icon-external {
+  width: 1.142578125em;
+}
+
+.icon-transparency-international {
+  width: 3.958984375em;
+}
+
+.icon-open-contracting-partnership {
+  width: 1.96875em;
+}
+
+.icon-global-witness {
+  width: 1.6669921875em;
+}
+
+.icon-one {
+  width: 1.02734375em;
+}
+
+.icon-open-corporates {
+  width: 5.0419921875em;
+}
+
+.icon-the-b-team {
+  width: 3.7607421875em;
+}
+
+.icon-uk-aid {
+  width: 0.9033203125em;
+}
+
+
+.icon-logo-main {
+  width: 3.96484375em;
+  font-size: 5rem;
+}
+
+.icon-socials {
+  font-size: 1rem;
+}
+
+.icon-services {
+  font-size: 7.5rem;
+}
+
+
+.icon-arrow {
+  vertical-align: middle;
+  font-size: 1.25rem;
+}
+
+.icon-user {
+  color: $light-gray;
+  vertical-align: middle;
+  font-size: 4rem;
+}
+
+.icon-guide {
+  font-size: 6rem;
+}
+
+.icon-hexagon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.icon-world-bank {
+  width: 20rem;
+}

@@ -1,0 +1,70 @@
+<div class="grid-x header{% unless home %} primary-background{% endunless %}">
+<div class="small-12 cell">
+
+<!-- Header Top -->
+
+<div class="grid-x padding-horizontal-2 padding-top-0 padding-bottom-0 align-justify header__top show-for-medium primary-background">
+
+  <div class="auto cell header__navigation sans-bold">
+    <div class="show-for-medium">
+      <ul class="dropdown menu align-middle" data-dropdown-menu>
+        {% for entry in site.data.navigation.header %}
+          <li{% if section == entry.title %} class="active"{% endif %}>
+            {% include site/menulink.html url=entry.url title=entry.title %}
+            {% if entry.sublinks %}
+              <ul class="menu align-middle">
+                {% for sublink in entry.sublinks %}
+                  <li{% if page.url contains sublink.url %} class="active"{% endif %}>
+                    {% include site/menulink.html url=sublink.url title=sublink.title %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="shrink cell header__social">
+    <div class="show-for-xlarge">
+      <ul class="menu align-center align-middle">
+        <li class="menu-text padding-right-0">Follow our work on</li>
+        {% for item in site.social %}
+        <li><a href="{{ item[1] }}" target="_blank" rel="noopener" class="padding-left-1 padding-right-0" title="{{ item[0] }}"><span class="show-for-sr">{{ item[0] }}</span><svg class="icon icon-socials icon-{{ item[0] }}"><use xlink:href="/assets/icons/symbol-defs.svg#icon-{{ item[0] }}"></use></svg></a></li>
+        {% endfor %}
+        <li><a href="https://anchor.fm/open-ownership" target="_blank" rel="noopener" class="padding-left-1 padding-right-0" title="Podcast"><span class="show-for-sr">Podcast</span><svg class="icon icon-socials"><use xlink:href="/assets/icons/symbol-defs.svg#icon-audio"><title>Podcast</title></use></svg></a></li>
+        <li><a href="https://mailchi.mp/440be76e70f3/the-record-landing-page" target="_blank" rel="noopener" class="padding-left-1 padding-right-0" title="Newsletter"><span class="show-for-sr">Newsletter</span><svg class="icon icon-socials"><use xlink:href="/assets/icons/symbol-defs.svg#icon-article"><title>Newsletter</title></use></svg></a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+<!-- End Navigation -->
+
+<!-- Logo and Tagline -->
+<div class="grid-x grid-padding-x grid-padding-y align-justify header__bottom {% if home %}home-{% endif %}background-primary">
+  <div class="shrink cell header__logo">
+    <a href="/" aria-label="Logo">
+      <svg class="icon icon-logo-main">
+        {% if home %}
+          <use xlink:href="/assets/icons/symbol-defs.svg#icon-logo-white"></use>
+        {% else %}
+          <use xlink:href="/assets/icons/symbol-defs.svg#icon-logo-main"></use>
+        {% endif %}
+      </svg>
+    </a>
+  </div>
+
+  <div class="shrink cell serif-regular show-for-small-only">
+    <button class="hamburger hamburger--collapse" data-toggler=".is-active" id="toggle" aria-label="menu" type="button" data-toggle="offCanvas">
+      <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+</div>
+<!-- End Logo and Tagline -->
+
+</div>
+</div>

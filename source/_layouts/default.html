@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+{% if page.name == 'index.md' %}{% assign home = true %}{% else %}{% assign home = false %}{% endif %}
+
+{% assign section = null %}
+{% for entry in site.data.navigation.header %}
+  {% if section == null %}
+    {% if entry.url and page.url contains entry.url %}
+      {% assign section = entry.title %}
+    {% else %}
+      {% if entry.sublinks %}
+        {% for sublink in entry.sublinks %}
+          {% if sublink.url and page.url contains sublink.url %}
+            {% assign section = entry.title %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<!-- Head -->
+{% include site/head.html %}
+<!-- End Head -->
+
+<body class="{{page.layout | slugify}}">
+
+<!-- Google Tag Manager -->
+{% if site.tag_manager %}
+  {% include site/tag-manager-body.html %}
+{% endif %}
+<!-- End Google Tag Manager -->
+
+<!-- Off Canvas Navigation -->
+<div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="push" data-close-on-click="true">
+{% include off-canvas/menu.html %}
+</div>
+<!-- End Off Canvas Navigation -->
+
+<div class="off-canvas-content {{page.layout | slugify}}" data-off-canvas-content>
+<!-- Header -->
+{% include site/header.html %}
+<!-- End Header -->
+
+<!-- Content -->
+{{content}}
+<!-- End Content -->
+
+<!-- Footer -->
+{% include site/footer.html %}
+<!-- End Footer-->
+</div>
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+
+</body>
+
+</html>

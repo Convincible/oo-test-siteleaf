@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<!-- Post Title -->
+<!-- This should match _includes/blocks/title.html -->
+<section class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y page__title border-bottom">
+    <div class="small-12 medium-10 cell" cell">
+      <h1>{{ page.title }}</h1>
+      {% assign description = page.description | strip_newlines %}
+      {% unless description == ""  %}
+        <p>{{description}}</p>
+      {% endunless %}
+      <p>
+        {% include blocks/categories.html categories=page.categories %}
+      </p>
+      <p class="medium-gray">
+        {% if page.author %}{{ page.author }} · {% endif %}{{ page.date | date: site.date_format }}
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End Post Title -->
+
+<!-- Post Content -->
+<section class="grid-container">
+  {% if page.image %}
+  {% assign image = page.image %}
+    <div class="grid-x grid-padding-x grid-padding-y">
+      <div class="small-12 cell">
+        <div class="light-gray-background image" data-interchange="{% include images/interchange-img-small-12-medium-6-cell.html %}"></div>
+      </div>
+    </div>
+  {% endif %}
+  <div class="grid-x grid-padding-x grid-padding-y align-center">
+    <div class="small-12 medium-10 large-8 cell">
+      {{ page.content }}
+      {% include blocks/tags.html tags=page.tags %}
+    </div>
+  </div>
+</section>
+
+<!-- Pagination -->
+{% include pagination/post.html %}
+<!-- End Pagination -->
