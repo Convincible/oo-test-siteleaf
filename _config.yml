@@ -1,28 +1,27 @@
 ---
 title: Open Ownership
 timezone: UTC
-collections_dir: content
 collections:
+  posts:
+    title: Posts
+    output: true
   resources:
     title: Resources
     output: true
-
-# Build settings
-source:                       "source" # NO LEADING SLASH!!!
-destination:                  "public"
+  uploads:
+    title: Uploads
+    output: true
+collections_dir: content
+source: source
+destination: public
 include:
- - "_redirects"
+- _redirects
 exclude:
- - "*.partial.*"
- - "*.map"
-show_warnings:                false
-#show_drafts:                 false
-#future:                      false
-#unpublished:                 false
-strict_front_matter:          true
-#excerpt_separator:            "" # Empty = do not generate excerpts
-disable_disk_cache:           true
-
+- "*.partial.*"
+- "*.map"
+show_warnings: false
+strict_front_matter: true
+disable_disk_cache: true
 url: https://www.openownership.org
 description: Open Ownership strengthens accountability and advances transparency in
   company ownership
