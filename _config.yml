@@ -5,6 +5,9 @@ collections:
   posts:
     title: Posts
     output: true
+  resource-listing:
+    title: Resource Listing
+    output: true
   resources:
     title: Resources
     output: true
